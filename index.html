@@ -163,8 +163,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 32%;
-    opacity: 0.54;
+    object-position: center 55%;
+    opacity: 0.88;
   }
 
   .hero::after {
@@ -172,8 +172,8 @@
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(90deg, rgba(13, 27, 42, 0.92), rgba(13, 27, 42, 0.58) 45%, rgba(13, 27, 42, 0.18)),
-      linear-gradient(0deg, rgba(13, 27, 42, 0.72), rgba(13, 27, 42, 0.02) 55%);
+      linear-gradient(90deg, rgba(13, 27, 42, 0.94), rgba(13, 27, 42, 0.66) 36%, rgba(13, 27, 42, 0.2) 65%, rgba(13, 27, 42, 0.08)),
+      linear-gradient(0deg, rgba(13, 27, 42, 0.58), rgba(13, 27, 42, 0.02) 62%);
   }
 
   .hero-content {
@@ -233,37 +233,6 @@
     border-color: var(--ink);
     background: var(--ink);
     color: var(--white);
-  }
-
-  .stats-strip {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    background: var(--white);
-  }
-
-  .stat {
-    padding: 1.35rem 2rem;
-    border-right: 1px solid var(--line);
-  }
-
-  .stat:last-child {
-    border-right: 0;
-  }
-
-  .stat strong {
-    display: block;
-    color: var(--ink);
-    font-size: 1.45rem;
-    line-height: 1;
-  }
-
-  .stat span {
-    display: block;
-    margin-top: 0.3rem;
-    color: var(--steel);
-    font-size: 0.82rem;
   }
 
   .who-grid {
@@ -425,6 +394,27 @@
     border-top: 1px solid var(--line);
   }
 
+  .project-card.code-project {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card.code-project .project-body {
+    order: 1;
+  }
+
+  .project-card.code-project .project-media {
+    order: 2;
+    border-top: 1px solid var(--line);
+  }
+
+  .project-card.code-project .project-media img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    padding: 0;
+  }
+
   .project-media,
   .project-body {
     min-width: 0;
@@ -501,6 +491,140 @@
     object-fit: contain;
     padding: 1.25rem;
     background: #f5f6f4;
+  }
+
+  .project-card.naca-project .project-media {
+    align-items: stretch;
+    padding: 1.2rem;
+    background: #f2f5f4;
+  }
+
+  .naca-gallery {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .naca-cad-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .naca-visual {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .project-card.code-project.naca-project .naca-visual img {
+    width: 100%;
+    height: 280px;
+    min-height: 0;
+    aspect-ratio: auto;
+    object-fit: contain;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #f7f8f6;
+  }
+
+  .project-card.code-project.naca-project .naca-plot img {
+    height: 460px;
+  }
+
+  .naca-visual figcaption {
+    min-height: 62px;
+    padding: 0.65rem 0.15rem 0;
+    color: var(--steel);
+    font-size: 0.76rem;
+    line-height: 1.45;
+  }
+
+  .naca-visual figcaption strong {
+    display: block;
+    color: var(--ink);
+    font-size: 0.82rem;
+  }
+
+  .project-card.beam-project .project-media {
+    align-items: stretch;
+    padding: 1.2rem;
+    background: #f2f5f4;
+  }
+
+  .beam-gallery {
+    width: 100%;
+    display: grid;
+    gap: 1.4rem;
+  }
+
+  .beam-stage + .beam-stage {
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .beam-stage-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .beam-stage-header span {
+    color: var(--amber);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .beam-stage-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  .beam-hand-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .beam-visual {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .project-card.code-project.beam-project .beam-visual img {
+    width: 100%;
+    height: 430px;
+    min-height: 0;
+    aspect-ratio: auto;
+    object-fit: contain;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #ffffff;
+  }
+
+  .project-card.code-project.beam-project .beam-hand-grid .beam-visual img {
+    height: 620px;
+  }
+
+  .project-card.code-project.beam-project .beam-code-output img {
+    height: 690px;
+  }
+
+  .beam-visual figcaption {
+    min-height: 62px;
+    padding: 0.65rem 0.15rem 0;
+    color: var(--steel);
+    font-size: 0.76rem;
+    line-height: 1.45;
+  }
+
+  .beam-visual figcaption strong {
+    display: block;
+    color: var(--ink);
+    font-size: 0.82rem;
   }
 
   .project-card.reverse .project-media {
@@ -632,6 +756,352 @@
     color: var(--slate);
     font-size: 0.78rem;
     font-style: normal;
+    line-height: 1.45;
+  }
+
+  .project-card.solar-story-project {
+    grid-template-columns: 1fr;
+  }
+
+  .solar-story-project > .project-body {
+    padding: 2.25rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .solar-story-project > .project-body p {
+    max-width: 780px;
+  }
+
+  .solar-story {
+    display: grid;
+    background: #f9faf8;
+  }
+
+  .solar-chapter {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.62fr) minmax(0, 1.38fr);
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .solar-chapter + .solar-chapter {
+    border-top: 1px solid var(--line);
+  }
+
+  .solar-chapter-copy {
+    align-self: start;
+    padding-top: 0.25rem;
+  }
+
+  .solar-step {
+    display: block;
+    color: var(--amber);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .solar-chapter h4 {
+    margin: 0.35rem 0 0.8rem;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.55rem;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  .solar-chapter-copy p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .solar-visual-grid {
+    display: grid;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .solar-visual-grid.two-up {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .solar-visual-grid.iteration-grid {
+    grid-template-columns: minmax(0, 1.45fr) minmax(240px, 0.75fr);
+  }
+
+  .solar-visual {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .solar-visual img {
+    width: 100%;
+    height: 340px;
+    min-height: 0;
+    padding: 0;
+    object-fit: contain;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #e8edf1;
+  }
+
+  .solar-chapter.iteration .solar-visual img {
+    height: 420px;
+  }
+
+  .solar-chapter.final-design .solar-visual img {
+    height: 470px;
+  }
+
+  .solar-visual figcaption {
+    min-height: 56px;
+    padding: 0.65rem 0.15rem 0;
+    color: var(--steel);
+    font-size: 0.76rem;
+    line-height: 1.45;
+  }
+
+  .solar-visual figcaption strong {
+    display: block;
+    color: var(--ink);
+    font-size: 0.82rem;
+  }
+
+  .solar-outcome-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 1.25rem 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .solar-outcome {
+    padding: 0.8rem 0.7rem;
+    border-right: 1px solid var(--line);
+  }
+
+  .solar-outcome:last-child {
+    border-right: 0;
+  }
+
+  .solar-outcome strong,
+  .solar-outcome span {
+    display: block;
+  }
+
+  .solar-outcome strong {
+    color: var(--ink);
+    font-size: 1.05rem;
+    line-height: 1.2;
+  }
+
+  .solar-outcome span {
+    margin-top: 0.25rem;
+    color: var(--slate);
+    font-size: 0.7rem;
+    line-height: 1.35;
+  }
+
+  .solar-result {
+    color: var(--ink-soft);
+    font-size: 0.84rem;
+    font-weight: 500;
+  }
+
+  .assembly-views .solar-visual img {
+    height: 300px;
+  }
+
+  .cad-assembly-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(230px, 0.75fr);
+    gap: 1rem;
+  }
+
+  .annotated-image {
+    position: relative;
+  }
+
+  .cad-marker {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 0.72rem;
+    font-weight: 800;
+    background: var(--ruby);
+    box-shadow: 0 2px 8px rgba(13, 27, 42, 0.3);
+    transform: translate(-50%, -50%);
+  }
+
+  .marker-wheel {
+    left: 91%;
+    top: 51%;
+  }
+
+  .marker-rods {
+    left: 61%;
+    top: 54%;
+  }
+
+  .marker-joints {
+    left: 39%;
+    top: 45%;
+  }
+
+  .marker-mount {
+    left: 61%;
+    top: 51%;
+  }
+
+  .marker-tabs {
+    left: 76%;
+    top: 34%;
+  }
+
+  .component-key {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.6rem;
+    margin-top: 0.9rem;
+  }
+
+  .component-key span {
+    display: flex;
+    gap: 0.45rem;
+    align-items: center;
+    color: var(--steel);
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
+
+  .component-key b {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.35rem;
+    height: 1.35rem;
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 0.62rem;
+    background: var(--ruby);
+  }
+
+  .fea-gallery {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .fea-gallery-main .solar-visual img {
+    height: 360px;
+  }
+
+  .fea-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
+  .fea-detail-grid .solar-visual img {
+    height: 210px;
+  }
+
+  .fea-detail-grid .solar-visual figcaption {
+    min-height: 48px;
+  }
+
+  .fea-project .solar-outcome-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fea-project .solar-outcome {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .fea-project .solar-outcome:last-child {
+    border-bottom: 0;
+  }
+
+  .fea-project .solar-outcome span {
+    margin-top: 0;
+    text-align: right;
+  }
+
+  .fea-table-wrap {
+    align-self: stretch;
+    padding: 0.25rem;
+  }
+
+  .fea-table {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    background: var(--white);
+  }
+
+  .fea-table caption {
+    padding: 0 0 0.7rem;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    line-height: 1.25;
+    text-align: left;
+  }
+
+  .fea-table th,
+  .fea-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .fea-table th {
+    color: var(--white);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: var(--ink-soft);
+  }
+
+  .fea-table td {
+    color: var(--steel);
+    font-size: 0.84rem;
+  }
+
+  .fea-table th:last-child,
+  .fea-table td:last-child {
+    text-align: right;
+  }
+
+  .fea-table tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .fea-table .critical-row td {
+    color: var(--ink);
+    font-weight: 700;
+    background: rgba(217, 154, 43, 0.12);
+  }
+
+  .fea-table-note {
+    margin-top: 0.65rem;
+    color: var(--slate);
+    font-size: 0.7rem;
     line-height: 1.45;
   }
 
@@ -954,7 +1424,6 @@
       font-size: 2.35rem;
     }
 
-    .stats-strip,
     .who-grid,
     .edu-grid,
     .resume-grid,
@@ -979,15 +1448,6 @@
       min-height: 320px;
     }
 
-    .stat {
-      border-right: 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .stat:last-child {
-      border-bottom: 0;
-    }
-
     .contact-inner {
       align-items: flex-start;
       flex-direction: column;
@@ -995,6 +1455,15 @@
 
     .story-grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    .solar-chapter {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .cad-assembly-grid {
+      grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
     }
   }
 
@@ -1046,8 +1515,75 @@
     .skills-grid,
     .story-grid,
     .process-grid,
-    .contour-grid {
+    .contour-grid,
+    .solar-visual-grid.two-up,
+    .solar-visual-grid.iteration-grid,
+    .solar-outcome-grid,
+    .cad-assembly-grid,
+    .fea-detail-grid,
+    .beam-hand-grid,
+    .naca-cad-grid,
+    .component-key {
       grid-template-columns: 1fr;
+    }
+
+    .solar-chapter {
+      padding: 1.25rem;
+    }
+
+    .solar-visual img,
+    .solar-chapter.iteration .solar-visual img {
+      height: 300px;
+    }
+
+    .solar-chapter.final-design .solar-visual img {
+      height: 360px;
+    }
+
+    .assembly-views .solar-visual img,
+    .fea-gallery-main .solar-visual img,
+    .fea-detail-grid .solar-visual img {
+      height: 280px;
+    }
+
+    .project-card.code-project.naca-project .naca-visual img,
+    .project-card.code-project.naca-project .naca-plot img {
+      height: 260px;
+    }
+
+    .project-card.code-project.beam-project .beam-visual img {
+      height: 260px;
+    }
+
+    .project-card.code-project.beam-project .beam-hand-grid .beam-visual img {
+      height: 460px;
+    }
+
+    .project-card.code-project.beam-project .beam-code-output img {
+      height: 320px;
+    }
+
+    .beam-stage-header {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .component-key {
+      gap: 0.45rem;
+    }
+
+    .component-key span {
+      font-size: 0.74rem;
+    }
+
+    .solar-outcome {
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .solar-outcome:last-child {
+      border-bottom: 0;
     }
 
     .project-body,
@@ -1137,8 +1673,8 @@
   <header class="hero">
     <img
       class="hero-img"
-      src="assets/hero-engineering.jpg"
-      alt="Engineering project collage"
+      src="assets/hero-solarcar-hangar.png"
+      alt="Virginia Tech solar car in a dark aircraft hangar"
     >
     <div class="hero-content">
       <p class="eyebrow">Virginia Tech Mechanical Engineering</p>
@@ -1150,25 +1686,6 @@
       </div>
     </div>
   </header>
-
-  <div class="stats-strip" aria-label="Portfolio highlights">
-    <div class="stat">
-      <strong>3.66</strong>
-      <span>Mechanical Engineering GPA</span>
-    </div>
-    <div class="stat">
-      <strong>35</strong>
-      <span>SolarCar steering wheel CAD iterations</span>
-    </div>
-    <div class="stat">
-      <strong>2.693</strong>
-      <span>Rack mount weld-tab FoS at 150 N</span>
-    </div>
-    <div class="stat">
-      <strong>5.5-30</strong>
-      <span>kg/s film-cooling CFD sweep</span>
-    </div>
-  </div>
 
   <section id="about">
     <div class="section-inner who-grid">
@@ -1236,39 +1753,294 @@
       </div>
 
       <div class="project-list">
-        <article class="project-card">
+        <article class="project-card solar-story-project">
           <div class="project-body">
             <p class="meta">Solar Car at Virginia Tech - Mechanical Design Engineer</p>
-            <h3>Steering System Design Validation</h3>
-            <p>Designed and validated steering components for Sun Voyager, including the steering wheel assembly, hub kit, steering rods, U-joints, rack mount assembly, custom weld tabs, and supporting steel components. The work combined SolidWorks CAD iteration, assembly integration, FEA, and track-test support.</p>
-            <div class="metric-grid">
-              <div class="metric">
-                <strong>35</strong>
-                <span>SolidWorks steering wheel iterations</span>
-              </div>
-              <div class="metric">
-                <strong>204.8 MPa</strong>
-                <span>Max von Mises stress in weld tab FEA</span>
-              </div>
-              <div class="metric">
-                <strong>2.693</strong>
-                <span>Factor of safety at exaggerated 150 N load</span>
-              </div>
-            </div>
-            <ul class="notes">
-              <li>Validated ASTM A656 Grade 80 HSLA weld tabs against a 551.581 MPa yield strength.</li>
-              <li>Predicted FoS rose to 4.040 at 100 N and 8.079 at 50 N under proportional loading.</li>
-              <li>Supported slalom, acceleration, and braking test sessions while processing bump-steer simulation data in MATLAB.</li>
-            </ul>
-            <div class="tool-row">
-              <span class="tool">SolidWorks</span>
-              <span class="tool">FEA</span>
-              <span class="tool">MATLAB</span>
-              <span class="tool">Vehicle Dynamics</span>
-            </div>
+            <h3>Ergonomical Steering Wheel Development</h3>
+            <p>As part of Virginia Tech's Solar Car team, I contributed to the design and development of Sun Voyager, a fully solar-powered race car built for international endurance competitions. My primary project focused on redesigning the steering wheel through an iterative, driver-centered engineering process involving hand sketches, CAD development, rapid prototyping, and continuous driver feedback.</p>
           </div>
-          <div class="project-media">
-            <img src="assets/solarcar-figure-03.png" alt="Solar car steering assembly CAD model">
+
+          <div class="solar-story">
+            <section class="solar-chapter challenge">
+              <div class="solar-chapter-copy">
+                <span class="solar-step">01 - The Challenge</span>
+                <h4>Driver Experience</h4>
+                <p>The existing Formula 1-inspired wheel kept the cockpit compact, but its rectangular layout reduced steering leverage and became uncomfortable during endurance driving. The redesign needed better ergonomics without disrupting the existing steering interface.</p>
+              </div>
+              <div class="solar-visual-grid">
+                <figure class="solar-visual">
+                  <img src="assets/oldwheel.png" alt="Original rectangular steering wheel installed in the Sun Voyager cockpit">
+                  <figcaption>
+                    <strong>Original steering wheel</strong>
+                    Compact packaging, limited rim area, and controls distributed around the display.
+                  </figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section class="solar-chapter concept-development">
+              <div class="solar-chapter-copy">
+                <span class="solar-step">02 - Concept Development</span>
+                <h4>Sketching and CAD Design</h4>
+                <p>Initial concepts explored wheel geometry, display integration, and mounting features before being translated into SolidWorks. These early models established the foundation for physical prototypes and driver feedback.</p>
+              </div>
+              <div class="solar-visual-grid two-up">
+                <figure class="solar-visual">
+                  <img src="assets/sketch.jpg" alt="Hand sketch of the first rounded steering wheel concept">
+                  <figcaption>
+                    <strong>Hand sketch</strong>
+                    Early geometry and control-layout exploration.
+                  </figcaption>
+                </figure>
+                <figure class="solar-visual">
+                  <img src="assets/initial_cad.png" alt="Initial SolidWorks model of the rounded steering wheel">
+                  <figcaption>
+                    <strong>Initial CAD</strong>
+                    First digital model with display mounting and button positions.
+                  </figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section class="solar-chapter iteration">
+              <div class="solar-chapter-copy">
+                <span class="solar-step">03 - Driver-Centered Iteration</span>
+                <h4>Prototype, Test, Refine</h4>
+                <p>Driver testing guided the evolution of the design. Prototype diameters of 270 mm and 310 mm bracketed the target before converging on a 285 mm final design. Thumb-reach studies refined control placement across more than 35 CAD iterations.</p>
+              </div>
+              <div class="solar-visual-grid iteration-grid">
+                <figure class="solar-visual">
+                  <img src="assets/20250426_163038.jpg" alt="Physical comparison of 270 millimeter and 310 millimeter steering wheel prototypes">
+                  <figcaption>
+                    <strong>Diameter study</strong>
+                    The 270 mm prototype felt too small; the 310 mm prototype felt too large.
+                  </figcaption>
+                </figure>
+                <figure class="solar-visual">
+                  <img src="assets/wheelplacement.png" alt="SolidWorks steering wheel model showing thumb reach and button placement studies">
+                  <figcaption>
+                    <strong>Control placement</strong>
+                    Button positions refined around driver thumb reach and hub constraints.
+                  </figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section class="solar-chapter final-design">
+              <div class="solar-chapter-copy">
+                <span class="solar-step">04 - Final Design</span>
+                <h4>Manufactured and Driver Tested</h4>
+                <div class="solar-outcome-grid" aria-label="Steering wheel project outcomes">
+                  <div class="solar-outcome">
+                    <strong>35+</strong>
+                    <span>CAD iterations</span>
+                  </div>
+                  <div class="solar-outcome">
+                    <strong>285 mm</strong>
+                    <span>Final diameter</span>
+                  </div>
+                  <div class="solar-outcome">
+                    <strong>Driver tested</strong>
+                    <span>Physical validation</span>
+                  </div>
+                </div>
+                <p class="solar-result">The final wheel improved comfort, steering leverage, and control accessibility while integrating with the Sun Voyager cockpit.</p>
+                <div class="tool-row">
+                  <span class="tool">SolidWorks</span>
+                  <span class="tool">Ergonomic Design</span>
+                  <span class="tool">Rapid Prototyping</span>
+                  <span class="tool">Driver Validation</span>
+                </div>
+              </div>
+              <div class="solar-visual-grid">
+                <figure class="solar-visual">
+                  <img src="assets/hero_wheel.png" alt="Final manufactured 285 millimeter steering wheel">
+                  <figcaption>
+                    <strong>Final steering wheel</strong>
+                    Completed 285 mm assembly with integrated driver controls and wrapped rim.
+                  </figcaption>
+                </figure>
+              </div>
+            </section>
+          </div>
+        </article>
+
+        <article class="project-card solar-story-project fea-project">
+          <div class="project-body">
+            <p class="meta">Solar Car at Virginia Tech - Structural Validation</p>
+            <h3>Steering Assembly FEA Validation</h3>
+            <p>Validated the Sun Voyager steering assembly before manufacturing by combining SolidWorks CAD, finite element analysis, and engineering calculations to verify the structural integrity of the rack mount assembly and custom weld tabs under conservative loading conditions.</p>
+          </div>
+
+          <div class="solar-story">
+            <section class="solar-chapter challenge">
+              <div class="solar-chapter-copy">
+                <span class="solar-step">01 - The Challenge</span>
+                <h4>Verify the load path before manufacturing</h4>
+                <p>The steering assembly transfers driver input through the wheel, rods, U-joints, and rack into the front suspension. The rack mount and welded tabs needed to withstand steering loads while maintaining an appropriate safety margin.</p>
+              </div>
+              <div class="solar-visual-grid two-up assembly-views">
+                <figure class="solar-visual">
+                  <img src="assets/steering-front-view-hires.png" alt="Front view of the steering assembly integrated with the chassis and suspension">
+                  <figcaption>
+                    <strong>Front view</strong>
+                    Steering rack and suspension integrated across the chassis.
+                  </figcaption>
+                </figure>
+                <figure class="solar-visual">
+                  <img src="assets/top view.png" alt="Top view of the steering system integrated through the driver compartment">
+                  <figcaption>
+                    <strong>Top view</strong>
+                    Driver input path from the wheel to the front steering rack.
+                  </figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section class="solar-chapter assembly">
+              <div class="solar-chapter-copy">
+                <span class="solar-step">02 - Steering Assembly</span>
+                <h4>Model the complete system</h4>
+                <p>The complete steering system was modeled and integrated in SolidWorks before structural validation, with particular focus on the custom rack mount assembly and welded steel tabs.</p>
+              </div>
+              <div>
+                <div class="cad-assembly-grid">
+                  <figure class="solar-visual">
+                    <div class="annotated-image">
+                      <img src="assets/steering_system.png" alt="Complete SolidWorks steering system with numbered component markers">
+                      <span class="cad-marker marker-wheel" aria-hidden="true">1</span>
+                      <span class="cad-marker marker-rods" aria-hidden="true">2</span>
+                      <span class="cad-marker marker-joints" aria-hidden="true">3</span>
+                    </div>
+                    <figcaption>
+                      <strong>Complete steering system</strong>
+                      Wheel, steering rods, U-joints, and rack modeled as one integrated path.
+                    </figcaption>
+                  </figure>
+                  <figure class="solar-visual">
+                    <div class="annotated-image">
+                      <img src="assets/steeringrack.png" alt="Close-up SolidWorks model of the steering rack mount and weld tabs">
+                      <span class="cad-marker marker-mount" aria-hidden="true">4</span>
+                      <span class="cad-marker marker-tabs" aria-hidden="true">5</span>
+                    </div>
+                    <figcaption>
+                      <strong>Rack mount detail</strong>
+                      Custom mount geometry and the tabs selected for structural validation.
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="component-key" aria-label="Steering assembly component key">
+                  <span><b>1</b>Steering wheel</span>
+                  <span><b>2</b>U-joints</span>
+                  <span><b>3</b>Steering rod</span>
+                  <span><b>4</b>Rack mount</span>
+                  <span><b>5</b>Weld tabs</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="solar-chapter fea-validation">
+              <div class="solar-chapter-copy">
+                <span class="solar-step">03 - Finite Element Validation</span>
+                <h4>Test the conservative load case</h4>
+                <p>Finite element analysis was performed on the rack mount weld tabs using ASTM A656 Grade 80 HSLA steel. A conservative 150 N load applied to each side produced stress below the material yield strength.</p>
+                <div class="solar-outcome-grid" aria-label="Steering FEA results">
+                  <div class="solar-outcome">
+                    <strong>204.8 MPa</strong>
+                    <span>Maximum von Mises stress</span>
+                  </div>
+                  <div class="solar-outcome">
+                    <strong>551.6 MPa</strong>
+                    <span>Material yield strength</span>
+                  </div>
+                  <div class="solar-outcome">
+                    <strong>2.69</strong>
+                    <span>Factor of safety at 150 N</span>
+                  </div>
+                </div>
+              </div>
+              <div class="fea-gallery">
+                <div class="fea-gallery-main">
+                  <figure class="solar-visual">
+                    <img src="assets/steering-fea-overall-hires.png" alt="Isometric von Mises stress contour of the rack mount weld tab assembly">
+                    <figcaption>
+                      <strong>Overall stress response</strong>
+                      Isometric von Mises contour of the combined rack-mount and weld-tab model.
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="fea-detail-grid">
+                  <figure class="solar-visual">
+                    <img src="assets/fea2.png" alt="Close-up contour at the upper edge of the weld tab">
+                    <figcaption>
+                      <strong>Sharp-edge concentration</strong>
+                      Local response along the loaded upper edge.
+                    </figcaption>
+                  </figure>
+                  <figure class="solar-visual">
+                    <img src="assets/fea4.png" alt="Finite element contour across the top face of the weld tab">
+                    <figcaption>
+                      <strong>Top-face distribution</strong>
+                      Contours spreading across the tab face.
+                    </figcaption>
+                  </figure>
+                  <figure class="solar-visual">
+                    <img src="assets/fea3.png" alt="Mesh-level contour around constrained weld tab edges">
+                    <figcaption>
+                      <strong>Mesh-level detail</strong>
+                      Local resolution around constrained edges.
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </section>
+
+            <section class="solar-chapter engineering-conclusion">
+              <div class="solar-chapter-copy">
+                <span class="solar-step">04 - Engineering Conclusion</span>
+                <h4>Safety margin increased at operational loads</h4>
+                <p>Because the 150 N load represented an exaggerated case, lower operational loads were predicted to produce significantly higher safety margins. The validated design progressed into manufacturing and vehicle integration after the structural assessment.</p>
+                <div class="tool-row">
+                  <span class="tool">SolidWorks Simulation</span>
+                  <span class="tool">Finite Element Analysis</span>
+                  <span class="tool">Structural Validation</span>
+                </div>
+              </div>
+              <div class="fea-table-wrap">
+                <table class="fea-table">
+                  <caption>Predicted factor of safety by applied load</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Applied force</th>
+                      <th scope="col">Factor of safety</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="critical-row">
+                      <td>150 N</td>
+                      <td>2.693</td>
+                    </tr>
+                    <tr>
+                      <td>125 N</td>
+                      <td>3.232</td>
+                    </tr>
+                    <tr>
+                      <td>100 N</td>
+                      <td>4.040</td>
+                    </tr>
+                    <tr>
+                      <td>75 N</td>
+                      <td>5.386</td>
+                    </tr>
+                    <tr>
+                      <td>50 N</td>
+                      <td>8.079</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p class="fea-table-note">Lower-load values were predicted assuming maximum stress scales proportionally with applied force.</p>
+              </div>
+            </section>
           </div>
         </article>
 
@@ -1411,39 +2183,186 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card code-project">
           <div class="project-body">
-            <p class="meta">Independent Technical Projects</p>
-            <h3>Numerical Engineering Tools</h3>
-            <p>Built smaller computational projects to strengthen the link between engineering fundamentals and code. These projects emphasize transparent solvers, clean input/output structure, and validation against expected behavior or hand calculations.</p>
+            <p class="meta">Python - Robot Kinematics</p>
+            <h3>Differential-Drive Robot Simulator</h3>
+            <p>Built a modular simulator that converts independent wheel-speed commands into planar robot motion. The model propagates position and heading over time while enforcing acceleration and velocity limits.</p>
             <div class="metric-grid">
               <div class="metric">
-                <strong>Python</strong>
-                <span>Differential-drive robot kinematics simulator</span>
+                <strong>0.01 s</strong>
+                <span>Euler integration time step</span>
               </div>
               <div class="metric">
-                <strong>Python</strong>
-                <span>Beam reactions, shear, and bending moment calculator</span>
+                <strong>0.16 m</strong>
+                <span>Wheel separation used in the model</span>
               </div>
               <div class="metric">
-                <strong>MATLAB</strong>
-                <span>NACA 2414 airfoil coordinate and area generator</span>
+                <strong>4 modes</strong>
+                <span>Straight, turning, spinning, and stop inputs</span>
               </div>
             </div>
             <ul class="notes">
-              <li>Used first-order kinematic modeling and Euler integration for robot pose propagation.</li>
-              <li>Implemented modular beam discretization, load effects, and post-processing logic.</li>
-              <li>Generated upper and lower NACA 2414 coordinates with numerical integration for area and volume estimates.</li>
+              <li>Maps left and right wheel velocities into linear and angular body motion.</li>
+              <li>Propagates x-position, y-position, and heading with first-order Euler integration.</li>
+              <li>Visualizes the resulting trajectory, wheel response, and integrated heading.</li>
             </ul>
             <div class="tool-row">
               <span class="tool">Python</span>
-              <span class="tool">MATLAB</span>
-              <span class="tool">Numerical Methods</span>
-              <span class="tool">Engineering Computation</span>
+              <span class="tool">NumPy</span>
+              <span class="tool">Matplotlib</span>
+              <span class="tool">Kinematics</span>
             </div>
           </div>
           <div class="project-media">
-            <img src="assets/numerical-tools-visual.svg" alt="Robot path, beam diagram, and NACA airfoil numerical methods visual">
+            <img src="assets/robot-simulator-visual.png" alt="Differential-drive robot trajectory, wheel velocities, and heading response">
+          </div>
+        </article>
+
+        <article class="project-card code-project beam-project">
+          <div class="project-body">
+            <p class="meta">Python - Structural Analysis</p>
+            <h3>Beam Analysis Calculator</h3>
+            <p>Developed a transparent solver for simply supported beams under point and uniformly distributed loading, connecting equilibrium calculations to shear-force and bending-moment results.</p>
+            <div class="metric-grid">
+              <div class="metric">
+                <strong>0.001 L</strong>
+                <span>Spatial discretization step</span>
+              </div>
+              <div class="metric">
+                <strong>Point + Uniformly Distributed Loading</strong>
+                <span>Supported loading types</span>
+              </div>
+              <div class="metric">
+                <strong>Shear-force &amp; Bending-moment</strong>
+                <span>Maximum values and locations extracted</span>
+              </div>
+            </div>
+            <ul class="notes">
+              <li>Solves vertical support reactions from force and moment equilibrium.</li>
+              <li>Builds shear-force and bending-moment distributions through numerical integration.</li>
+              <li>Reports the largest absolute shear and moment with their beam locations.</li>
+            </ul>
+            <div class="tool-row">
+              <span class="tool">Python</span>
+              <span class="tool">Matplotlib</span>
+              <span class="tool">Statics</span>
+              <span class="tool">Numerical Integration</span>
+            </div>
+          </div>
+          <div class="project-media beam-media">
+            <div class="beam-gallery">
+              <section class="beam-stage">
+                <div class="beam-stage-header">
+                  <span>01 - Problem Definition</span>
+                  <h4>Establish the validation load case</h4>
+                </div>
+                <figure class="beam-visual">
+                  <img src="assets/beam-validation-question.png" alt="Textbook-style simply supported beam problem with a point load and partial-span uniformly distributed load">
+                  <figcaption>
+                    <strong>Validation load case</strong>
+                    An 8 m beam with a 10 kN point load at 3 m and a 2 kN/m distributed load over the final 5 m.
+                  </figcaption>
+                </figure>
+              </section>
+
+              <section class="beam-stage">
+                <div class="beam-stage-header">
+                  <span>02 - Hand Validation</span>
+                  <h4>Solve the same case independently</h4>
+                </div>
+                <div class="beam-hand-grid">
+                  <figure class="beam-visual">
+                    <img src="assets/beam-validation-hand-reactions.png" alt="Handwritten free-body diagram and support reaction calculations for the beam problem">
+                    <figcaption>
+                      <strong>Equilibrium and support reactions</strong>
+                      The free-body diagram and equilibrium equations returned 9.375 kN at A and 10.625 kN at B.
+                    </figcaption>
+                  </figure>
+                  <figure class="beam-visual">
+                    <img src="assets/beam-validation-hand-diagrams.png" alt="Handwritten shear-force and bending-moment diagrams for the beam problem">
+                    <figcaption>
+                      <strong>Manual shear and moment diagrams</strong>
+                      The hand solution identified a 10.625 kN maximum shear magnitude and a 28.125 kN-m maximum moment.
+                    </figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="beam-stage">
+                <div class="beam-stage-header">
+                  <span>03 - Code Verification</span>
+                  <h4>Compare the numerical output</h4>
+                </div>
+                <figure class="beam-visual beam-code-output">
+                  <img src="assets/beam-validation-code-output.png" alt="Beam calculator output showing matching shear-force and bending-moment diagrams">
+                  <figcaption>
+                    <strong>Numerical solver output</strong>
+                    The program reproduced the manually calculated reactions, shear values, and maximum bending moment.
+                  </figcaption>
+                </figure>
+              </section>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card code-project naca-project">
+          <div class="project-body">
+            <p class="meta">MATLAB - Airfoil Geometry</p>
+            <h3>NACA 2414 Airfoil Generator</h3>
+            <p>Created a MATLAB tool that converts the NACA four-digit definition into upper and lower surface coordinates, then uses numerical integration to estimate section area and wing volume.</p>
+            <div class="metric-grid">
+              <div class="metric">
+                <strong>2%</strong>
+                <span>Maximum camber</span>
+              </div>
+              <div class="metric">
+                <strong>40%</strong>
+                <span>Camber location along the chord</span>
+              </div>
+              <div class="metric">
+                <strong>14%</strong>
+                <span>Maximum thickness</span>
+              </div>
+            </div>
+            <ul class="notes">
+              <li>Generates upper and lower surfaces from the standard NACA 2414 formulation.</li>
+              <li>Computes the piecewise mean camber line, slope, and local surface coordinates.</li>
+              <li>Uses trapezoidal integration for cross-sectional area and a 30 ft span volume estimate.</li>
+            </ul>
+            <div class="tool-row">
+              <span class="tool">MATLAB</span>
+              <span class="tool">Aerodynamics</span>
+              <span class="tool">Numerical Integration</span>
+              <span class="tool">Geometry</span>
+            </div>
+          </div>
+          <div class="project-media naca-media">
+            <div class="naca-gallery">
+              <figure class="naca-visual naca-plot">
+                <img src="assets/naca-2414-matlab-plot.jpg" alt="MATLAB plot of the generated NACA 2414 upper and lower airfoil surfaces">
+                <figcaption>
+                  <strong>MATLAB airfoil profile</strong>
+                  Upper and lower surfaces generated from the NACA 2414 equations and exported as coordinate data.
+                </figcaption>
+              </figure>
+              <div class="naca-cad-grid">
+                <figure class="naca-visual">
+                  <img src="assets/naca-2414-solidworks-sketch.png" alt="NACA 2414 profile reconstructed as a closed SolidWorks sketch from imported CSV coordinates">
+                  <figcaption>
+                    <strong>Imported SolidWorks sketch</strong>
+                    CSV coordinates imported into SolidWorks to reconstruct the closed airfoil profile.
+                  </figcaption>
+                </figure>
+                <figure class="naca-visual">
+                  <img src="assets/naca-2414-solidworks-extrusion.png" alt="Extruded three-dimensional SolidWorks model of the NACA 2414 airfoil">
+                  <figcaption>
+                    <strong>Extruded CAD model</strong>
+                    The closed profile extruded into a three-dimensional airfoil section.
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
           </div>
         </article>
       </div>
@@ -1459,7 +2378,7 @@
         <div class="resume-card">
           <p class="meta">Singapore Armed Forces - Military Operations Specialist</p>
           <h3>Team and Operations Leadership</h3>
-          <p>Led an operations team of 6 soldiers responsible for planning, coordination, and execution of multi-domain training operations across land, air, and sea assets.</p>
+          <p>Led an operations team of 6 soldiers responsible for planning, coordination, and execution of multi-domain training operations across land, air, and sea assets. Also supported the welfare and morale of team members</p>
         </div>
         <div class="resume-card">
           <p class="meta">Safety and reporting</p>
@@ -1470,19 +2389,19 @@
       <div class="skills-grid">
         <div class="resume-card">
           <h3>Design and Simulation</h3>
-          <p>SolidWorks, Fusion 360, ANSYS Workbench, ANSYS Fluent, CAD iteration, FEA, CFD, thermal analysis.</p>
+          <p>Computer Aided Design (CAD), SolidWorks, Fusion 360, Computational Fluid Dynamics (CFD), ANSYS Fluent, Finite Element Analysis (FEA).</p>
         </div>
         <div class="resume-card">
           <h3>Programming</h3>
-          <p>Python, MATLAB, C++, basic Rust, numerical solvers, engineering calculators, simulation post-processing.</p>
+          <p>Python, C++, Rust, MATLAB, Object Oriented Programming.</p>
         </div>
         <div class="resume-card">
           <h3>Manufacturing and Testing</h3>
-          <p>Design validation reports, test support, measurement planning, slalom/acceleration/braking validation sessions.</p>
+          <p>Design and Validation Documentation, Test Planning and Execution, Measurement and Data Analysis.</p>
         </div>
         <div class="resume-card">
           <h3>Communication</h3>
-          <p>Research presentations, technical reports, cross-functional team coordination, English and intermediate Mandarin.</p>
+          <p>Research Presentations, Technical Reports, Cross-functional Team Coordination, English and Intermediate Mandarin.</p>
         </div>
       </div>
     </div>
@@ -1527,7 +2446,7 @@
             Soccer
           </p>
           <h3>A lifelong passion for the beautiful game</h3>
-          <p>I have been passionate about soccer for as long as I can remember. A Chelsea FC supporter since age three, I closely follow the Premier League and international soccer. My favorite players, Messi and Kvaratskhelia, inspire me with their creativity and vision.</p>
+          <p>I have been passionate about soccer for as long as I can remember. A Chelsea FC supporter since age three, I closely follow the Premier League and international soccer. My favorite players, Messi, Kvaratskhelia and Haaland, inspire me with their creativity, vision and hard work.</p>
         </div>
       </div>
 
