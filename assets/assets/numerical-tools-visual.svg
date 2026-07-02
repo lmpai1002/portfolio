@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Numerical engineering tools visual</title>
+  <desc id="desc">A computational engineering visual with a robot path, beam diagrams, and a NACA airfoil plot.</desc>
+  <rect width="1200" height="820" fill="#f5f6f4"/>
+  <rect x="56" y="54" width="1088" height="712" rx="22" fill="#ffffff" stroke="#d6dcdd" stroke-width="2"/>
+  <rect x="96" y="96" width="472" height="282" rx="14" fill="#eef2f3" stroke="#d6dcdd"/>
+  <rect x="632" y="96" width="472" height="282" rx="14" fill="#fbfaf6" stroke="#d6dcdd"/>
+  <rect x="96" y="430" width="1008" height="284" rx="14" fill="#eef2f3" stroke="#d6dcdd"/>
+
+  <text x="126" y="146" fill="#0d1b2a" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700">Robot Kinematics</text>
+  <path d="M150 316 C230 226 276 288 344 212 C412 136 466 172 520 130" fill="none" stroke="#3aa6a1" stroke-width="9" stroke-linecap="round"/>
+  <path d="M150 316 C230 226 276 288 344 212 C412 136 466 172 520 130" fill="none" stroke="#0d1b2a" stroke-width="2" stroke-dasharray="10 16" opacity="0.35"/>
+  <circle cx="150" cy="316" r="13" fill="#a94b4b"/>
+  <circle cx="520" cy="130" r="13" fill="#d99a2b"/>
+  <g transform="translate(327 201) rotate(-28)">
+    <rect x="-34" y="-20" width="68" height="40" rx="10" fill="#1b3044"/>
+    <circle cx="-22" cy="24" r="9" fill="#486276"/>
+    <circle cx="22" cy="24" r="9" fill="#486276"/>
+    <path d="M8 0 L34 -12 L34 12 Z" fill="#d99a2b"/>
+  </g>
+  <text x="126" y="352" fill="#486276" font-family="Inter, Arial, sans-serif" font-size="22">pose propagation + path trace</text>
+
+  <text x="662" y="146" fill="#0d1b2a" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700">Beam Solver</text>
+  <line x1="690" y1="214" x2="1044" y2="214" stroke="#0d1b2a" stroke-width="8" stroke-linecap="round"/>
+  <polygon points="718,226 690,278 746,278" fill="#486276"/>
+  <polygon points="1016,226 988,278 1044,278" fill="#486276"/>
+  <line x1="812" y1="178" x2="812" y2="214" stroke="#a94b4b" stroke-width="7" stroke-linecap="round"/>
+  <polygon points="812,222 795,188 829,188" fill="#a94b4b"/>
+  <line x1="926" y1="164" x2="926" y2="214" stroke="#a94b4b" stroke-width="7" stroke-linecap="round"/>
+  <polygon points="926,222 909,188 943,188" fill="#a94b4b"/>
+  <polyline points="686,328 760,300 848,332 944,282 1046,318" fill="none" stroke="#3aa6a1" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="662" y="352" fill="#486276" font-family="Inter, Arial, sans-serif" font-size="22">reactions + shear + moment</text>
+
+  <text x="126" y="488" fill="#0d1b2a" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700">NACA 2414 Airfoil Generator</text>
+  <line x1="156" y1="640" x2="1046" y2="640" stroke="#d6dcdd" stroke-width="3"/>
+  <line x1="156" y1="538" x2="156" y2="682" stroke="#d6dcdd" stroke-width="3"/>
+  <path d="M174 628 C310 566 500 546 724 566 C878 580 1000 610 1052 630 C990 644 852 658 682 660 C482 662 286 648 174 628 Z" fill="#d8efed" stroke="#1b3044" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M174 628 C310 566 500 546 724 566 C878 580 1000 610 1052 630" fill="none" stroke="#3aa6a1" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="724" cy="566" r="7" fill="#d99a2b"/>
+  <text x="126" y="694" fill="#486276" font-family="Inter, Arial, sans-serif" font-size="22">coordinate generation + numerical integration</text>
+</svg>
